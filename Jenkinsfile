@@ -6,15 +6,16 @@ pipeline {
                           ping  google.hu -c 4
                      }
                 }
-                stage("Ping") {
+                stage("Loop") {
                      steps {
-                          ping  google.hu -c 4
+                timeout(time: 1, unit: 'MINUTES') {
+                    sh  'for i in {1..5}
+                        do
+                            echo "Hello World!"
+                            sleep 1
+                        done'
                      }
                 }
-                stage("Ping") {
-                     steps {
-                          ping  google.hu -c 4
-                     }
                 }
            }
       }
