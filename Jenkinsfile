@@ -3,13 +3,13 @@ pipeline {
            stages {
                 stage("Ping") {
                      steps {
-                          ping  google.hu -c 4
+                          sh 'ping  google.hu -c 4'
                      }
                 }
                 stage("Loop") {
                      steps {
                 timeout(time: 1, unit: 'MINUTES') {
-                    sh  echo "Hello World!"
+                    sh  'echo "Hello World!"'
                      }
                 }
                 }
