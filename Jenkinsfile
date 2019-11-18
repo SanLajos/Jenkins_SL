@@ -9,11 +9,7 @@ pipeline {
                 stage("Loop") {
                      steps {
                 timeout(time: 1, unit: 'MINUTES') {
-                    sh  for i in {1..5}
-                        do
-                            echo "Hello World!"
-                            sleep 1
-                        done
+                    sh  echo "Hello World!"
                      }
                 }
                 }
